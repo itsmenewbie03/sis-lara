@@ -29,9 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // NOTE: not required to use controller
-    Route::get("/students", function () {
-        return view("student.index");
-    })->name("student.index");
+    // Route::get("/students", function () {
+    //     return view("student.index");
+    // })->name("student.index");
+
+    Route::resource("/student", \App\Http\Controllers\StudentController::class);
 
     Route::get("/subjects", function () {
         return view("subject.index");

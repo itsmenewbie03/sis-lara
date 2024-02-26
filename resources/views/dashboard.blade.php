@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css">
 
 </head>
 
@@ -275,6 +276,7 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">@yield("content","Dashboard Home")</h1>
                     </div>
+                    @yield("table")
 
                 </div>
                 <!-- /.container-fluid -->
@@ -344,7 +346,8 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
+    @stack("scripts")
 </body>
 
 </html>
