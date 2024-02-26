@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Student Information System</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href={{asset('vendor/fontawesome-free/css/all.min.css')}} rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href={{asset("css/sb-admin-2.min.css")}} rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css">
 
 </head>
@@ -32,7 +32,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href={{route('dashboard')}}>
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-user-shield"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Deez Nuts<sup>69</sup></div>
             </a>
@@ -188,7 +188,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <img class="rounded-circle" src={{asset("img/undraw_profile_1.svg")}} alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -199,7 +199,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <img class="rounded-circle" src={{asset("img/undraw_profile_2.svg")}} alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -210,7 +210,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <img class="rounded-circle" src={{asset("img/undraw_profile_3.svg")}} alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -240,7 +240,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->username}}</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src={{asset("img/undraw_profile.svg")}}>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -277,7 +277,7 @@
                         <h1 class="h3 mb-0 text-gray-800">@yield("content","Dashboard Home")</h1>
                     </div>
                     @yield("table")
-
+                    @yield("form")
                 </div>
                 <!-- /.container-fluid -->
 
@@ -331,21 +331,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src={{asset("vendor/jquery/jquery.min.js")}}></script>
+    <script src={{asset("vendor/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src={{asset("vendor/jquery-easing/jquery.easing.min.js")}}></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src={{asset("js/sb-admin-2.min.js" )}}></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src={{asset("vendor/chart.js/Chart.min.js")}}></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src={{asset("js/demo/chart-area-demo.js" )}}></script>
+    <script src={{asset("js/demo/chart-pie-demo.js" )}}></script>
     <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
     @stack("scripts")
 </body>

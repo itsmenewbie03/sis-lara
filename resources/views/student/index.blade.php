@@ -4,7 +4,7 @@ Student Dashboard
 @endsection
 @section("table")
 
-<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+<div class="modal" tabindex="-1" role="dialog" id="addStudentModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -20,7 +20,7 @@ Student Dashboard
     </div>
 </div>
 
-<button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
+<button class="btn btn-primary float-right" data-toggle="modal" data-target="#addStudentModal">Add</button>
 <table id="myTable" class="display">
     <thead>
         <tr>
@@ -44,9 +44,15 @@ Student Dashboard
                     {{ method_field('DELETE') }}
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-danger delete-user" value="Delete">
+                        <button type="submit" class="btn btn-danger" data-toggle="tooltip" title="Delete Student">
+                            <i class="fas fa-user-times"></i>
+                        </button>
                     </div>
                 </form>
+
+                <a href="{{route('student.edit',$student->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Edit Student">
+                    <i class="fas fa-user-edit"></i>
+                </a>
             </td>
         </tr>
         @endforeach

@@ -55,7 +55,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view("student.edit", ["student" => $student]);
     }
 
     /**
@@ -63,7 +63,16 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        // TODO: perofrm validation here xD
+        $student->name = $request->name;
+        $student->address = $request->address;
+        $student->age = $request->age;
+        $res = $student->save();
+        if ($res) {
+            return redirect()->route("student.index");
+        } else {
+            dd("Student Update Failed");
+        }
     }
 
     /**
