@@ -35,11 +35,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource("/student", \App\Http\Controllers\StudentController::class);
 
-    Route::get("/subjects", function () {
-        return view("subject.index");
-    })->name("subject.index");
+    Route::resource("/subject", \App\Http\Controllers\SubjectController::class);
 
-    Route::get("/grades", function () {
+       Route::get("/grades", function () {
         return view("grade.index");
     })->name("grade.index");
 
