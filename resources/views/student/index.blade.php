@@ -14,7 +14,7 @@ Student Dashboard
                 </button>
             </div>
             <div class="modal-body">
-                @include("components.add-student-form")
+                @include("components.forms.add-student")
             </div>
         </div>
     </div>

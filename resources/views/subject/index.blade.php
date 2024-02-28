@@ -14,7 +14,7 @@ Subject Dashboard
                 </button>
             </div>
             <div class="modal-body">
-                @include("components.add-subject-form");
+                @include("components.forms.add-subject");
             </div>
         </div>
     </div>
@@ -50,9 +50,9 @@ Subject Dashboard
                         <i class="fas fa-user-edit"></i>
                     </a>
                 </form>
- 
+
             </td>
-       </tr>
+        </tr>
         @endforeach
     </tbody>
 </table>
