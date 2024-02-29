@@ -28,18 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // NOTE: not required to use controller
-    // Route::get("/students", function () {
-    //     return view("student.index");
-    // })->name("student.index");
-
     Route::resource("/student", \App\Http\Controllers\StudentController::class);
     Route::resource("/subject", \App\Http\Controllers\SubjectController::class);
     Route::resource("/grade", \App\Http\Controllers\GradeController::class);
-
-    // Route::get("/grades", function () {
-    //     return view("grade.index");
-    // })->name("grade.index");
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });

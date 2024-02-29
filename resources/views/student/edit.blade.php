@@ -3,7 +3,7 @@
 Edit Student
 @endsection
 @section("form")
-<form action="{{ route('student.update', $student->id) }}" method="POST" id="editUserForm">
+<form action="{{ route('student.update', $student->id) }}" method="POST" id="editStudentForm">
     @csrf
     @method('PATCH')
     <div class="modal-body">

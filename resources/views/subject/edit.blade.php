@@ -3,7 +3,7 @@
 Edit Subject
 @endsection
 @section("form")
-<form action="{{ route('subject.update', $subject->id) }}" method="POST" id="editUserForm">
+<form action="{{ route('subject.update', $subject->id) }}" method="POST" id="editSubjectForm">
     @csrf
     @method('PATCH')
     <div class="modal-body">

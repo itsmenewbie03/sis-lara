@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grade;
+use App\Models\Student;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
@@ -12,9 +14,12 @@ class GradeController extends Controller
      */
     public function index()
     {
+        // NOTE: we will pass the students and subjects as we need it on the add form
         $grades = Grade::all();
-        // TODO: replace the student_id with the student's name
-        return view('grade.index', compact('grades'));
+        $students = Student::all();
+        $subjects = Subject::all();
+
+        return view('grade.index', ['grades' => $grades, 'students' => $students, 'subjects' => $subjects]);
     }
 
     /**
@@ -30,7 +35,17 @@ class GradeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // TODO: perform validation here xD
+        $grade = new Grade();
+        $grade->student_id = $request->student_id;
+        $grade->subject_id = $request->subject_id;
+        $grade->grade = $request->grade;
+        $res = $grade->save();
+        if ($res) {
+            return redirect()->route("grade.index");
+        } else {
+            dd("Grade Insert Failed");
+        }
     }
 
     /**
@@ -46,7 +61,7 @@ class GradeController extends Controller
      */
     public function edit(Grade $grade)
     {
-        //
+        return view("grade.edit", ["grade" => $grade]);
     }
 
     /**
@@ -54,7 +69,14 @@ class GradeController extends Controller
      */
     public function update(Request $request, Grade $grade)
     {
-        //
+        // NOTE: we will only allow updates in grade
+        $grade->grade = $request->grade;
+        $res = $grade->save();
+        if ($res) {
+            return redirect()->route("grade.index");
+        } else {
+            dd("Grade Update Failed");
+        }
     }
 
     /**
@@ -62,6 +84,11 @@ class GradeController extends Controller
      */
     public function destroy(Grade $grade)
     {
-        //
+        $res = $grade->delete();
+        if ($res) {
+            return redirect()->route("grade.index");
+        } else {
+            dd("Grade Deletion Failed");
+        }
     }
 }

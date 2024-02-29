@@ -4,7 +4,7 @@ Grades Dashboard
 @endsection
 @section("table")
 
-<div class="modal" tabindex="-1" role="dialog" id="addSubjectModal">
+<div class="modal" tabindex="-1" role="dialog" id="addGradeModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,13 +14,13 @@ Grades Dashboard
                 </button>
             </div>
             <div class="modal-body">
-                @include("components.forms.add-subject");
+                @include("components.forms.add-grade");
             </div>
         </div>
     </div>
 </div>
 
-<button class="btn btn-primary float-right" data-toggle="modal" data-target="#addSubjectModal">Add</button>
+<button class="btn btn-primary float-right" data-toggle="modal" data-target="#addGradeModal">Add</button>
 <table id="myTable" class="display">
     <thead>
         <tr>
@@ -44,11 +44,11 @@ Grades Dashboard
                     {{ method_field('DELETE') }}
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-danger" data-toggle="tooltip" title="Delete Subject">
+                        <button type="submit" class="btn btn-danger" data-toggle="tooltip" title="Delete Grade">
                             <i class="fas fa-user-times"></i>
                         </button>
                     </div>
-                    <a href="{{route('grade.edit',$grade->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Edit Subject">
+                    <a href="{{route('grade.edit',$grade->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Edit Grade">
                         <i class="fas fa-user-edit"></i>
                     </a>
                 </form>
