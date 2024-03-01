@@ -3,6 +3,14 @@
 Student Dashboard
 @endsection
 @section("table")
+<!-- HACK: toggle the modal on refresh if there are any errors -->
+@if($errors->any())
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        $('#addStudentModal').modal('show');
+    });
+</script>
+@endif
 
 <div class="modal" tabindex="-1" role="dialog" id="addStudentModal">
     <div class="modal-dialog" role="document">
