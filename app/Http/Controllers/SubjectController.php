@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Subject;
 use App\Http\Requests\SubjectRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\SubjectUpdateRequest;
 
 class SubjectController extends Controller
 {
@@ -60,7 +60,7 @@ class SubjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Subject $subject)
+    public function update(SubjectUpdateRequest $request, Subject $subject)
     {
         $subject->subjectName = $request->subjectName;
         $subject->subjectCode = $request->subjectCode;

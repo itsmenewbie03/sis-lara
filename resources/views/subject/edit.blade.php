@@ -9,11 +9,13 @@ Edit Subject
     <div class="modal-body">
         <div class="form-group">
             <label for="subjectName">Subject Name</label>
-            <input type="text" class="form-control" name="subjectName" id="subjectName" value="{{$subject->subjectName}}" required>
+            <input type="text" class="form-control" name="subjectName" id="subjectName" value="{{old('subjectName') ?? $subject->subjectName}}" required>
+            <x-b-input-error :messages="$errors->get('subjectName')" class="mt-2" />
         </div>
         <div class="form-group">
             <label for="subjectCode">Subject Code</label>
-            <input type="text" class="form-control" name="subjectCode" id="subjectCode" value="{{$subject->subjectCode}}" required>
+            <input type="text" class="form-control" name="subjectCode" id="subjectCode" value="{{old('subjectCode') ?? $subject->subjectCode}}" required>
+            <x-b-input-error :messages="$errors->get('subjectCode')" class="mt-2" />
         </div>
     </div>
     <div class="modal-footer">
