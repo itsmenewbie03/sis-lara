@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href={{asset("css/sb-admin-2.min.css")}} rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="{{asset('css/dataTables.dataTables.min.css')}}">
 
 </head>
 
@@ -221,7 +221,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                                        <img class="rounded-circle" src="{{asset('img/doggy.jpg')}}" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
@@ -346,7 +346,7 @@
     <!-- Page level custom scripts -->
     <script src={{asset("js/demo/chart-area-demo.js" )}}></script>
     <script src={{asset("js/demo/chart-pie-demo.js" )}}></script>
-    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
+    <script src={{asset("vendor/datatables/dataTables.min.js")}}></script>
     @stack("scripts")
 </body>
 
