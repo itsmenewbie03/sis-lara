@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Subject;
+use App\Http\Requests\GradeRequest;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
@@ -33,7 +34,7 @@ class GradeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(GradeRequest $request)
     {
         // TODO: perform validation here xD
         $grade = new Grade();

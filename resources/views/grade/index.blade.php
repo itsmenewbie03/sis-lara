@@ -4,6 +4,15 @@ Grades Dashboard
 @endsection
 @section("table")
 
+<!-- HACK: toggle the modal on refresh if there are any errors -->
+@if($errors->any())
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        $('#addGradeModal').modal('show');
+    });
+</script>
+@endif
+
 <div class="modal" tabindex="-1" role="dialog" id="addGradeModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
