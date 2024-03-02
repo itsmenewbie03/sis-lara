@@ -6,6 +6,7 @@ use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Http\Requests\GradeRequest;
+use App\Http\Requests\GradeUpdateRequest;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
@@ -36,7 +37,6 @@ class GradeController extends Controller
      */
     public function store(GradeRequest $request)
     {
-        // TODO: perform validation here xD
         $grade = new Grade();
         $grade->student_id = $request->student_id;
         $grade->subject_id = $request->subject_id;
@@ -68,7 +68,7 @@ class GradeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Grade $grade)
+    public function update(GradeUpdateRequest $request, Grade $grade)
     {
         // NOTE: we will only allow updates in grade
         $grade->grade = $request->grade;

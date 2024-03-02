@@ -18,7 +18,8 @@ Edit Grade
         <div class="form-group">
             <label for="grade">Grade</label>
             <!-- NOTE: this is set to type=text as type=number seems to be problematic -->
-            <input type="text" class="form-control" name="grade" id="grade" value="{{$grade->grade}}" required>
+            <input type="text" class="form-control" name="grade" id="grade" value="{{old('grade') ?? $grade->grade}}" required>
+            <x-b-input-error :messages="$errors->get('grade')" class="mt-2" />
         </div>
     </div>
     <div class="modal-footer">
