@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Student;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StudentRequest extends FormRequest
@@ -23,7 +22,7 @@ class StudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'unique:' . Student::class],
+            'name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'age' => ['required', 'integer', 'min:1', 'max:120'],
         ];

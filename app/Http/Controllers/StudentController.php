@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentRequest;
+use App\Http\Requests\StudentUpdateRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -61,9 +62,8 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Student $student)
+    public function update(StudentUpdateRequest $request, Student $student)
     {
-        // TODO: perofrm validation here xD
         $student->name = $request->name;
         $student->address = $request->address;
         $student->age = $request->age;
