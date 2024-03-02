@@ -23,7 +23,7 @@ Edit Grade
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a class="btn btn-secondary" href="{{route('grade.index')}}">Cancel</a>
         <button type="submit" class="btn btn-primary">Update</button>
     </div>
 </form>
