@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subject;
+use App\Http\Requests\SubjectRequest;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -27,7 +28,7 @@ class SubjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SubjectRequest $request)
     {
         $subject = new Subject();
         $subject->subjectName = $request->subjectName;
@@ -69,7 +70,6 @@ class SubjectController extends Controller
         } else {
             dd("Subject Update Failed");
         }
-
     }
 
     /**
