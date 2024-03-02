@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-user-shield"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Deez Nuts<sup>69</sup></div>
+                <div class="sidebar-brand-text mx-3">SiS Lara<sup>1.0</sup></div>
             </a>
 
             <!-- Divider -->
@@ -51,19 +51,19 @@
                 Utilities
             </div>
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item {{str_contains(Route::currentRouteName(),'student') ? 'active' : ''}}">
                 <a class="nav-link" href={{route('student.index')}}>
                     <i class="fas fa-fw fa-user"></i>
                     <span>Student</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item {{str_contains(Route::currentRouteName(),'subject') ? 'active' : ''}}">
                 <a class="nav-link" href={{route('subject.index')}}>
                     <i class="fas fa-fw fa-book"></i>
                     <span>Subject</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{str_contains(Route::currentRouteName(),'grade') ? 'active' : ''}}">
                 <a class="nav-link" href={{route('grade.index')}}>
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Grade</span></a>
