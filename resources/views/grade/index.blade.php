@@ -48,20 +48,22 @@ Grades Dashboard
             <td>{{$grade->subject->subjectCode}}</td>
             <td>{{$grade->grade}}</td>
             <td>
-                <form method="POST" action={{route("grade.destroy",$grade->id)}}>
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
+                <div class="d-flex">
 
-                    <div class="form-group">
+                    <form method="POST" action={{route("grade.destroy",$grade->id)}}>
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+
                         <button type="submit" class="btn btn-danger" data-toggle="tooltip" title="Delete Grade">
                             <i class="fas fa-user-times"></i>
                         </button>
-                    </div>
-                    <a href="{{route('grade.edit',$grade->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Edit Grade">
+                    </form>
+                    <a href="{{route('grade.edit',$grade->id)}}" class="ml-1 btn btn-primary" data-toggle="tooltip" title="Edit Grade">
                         <i class="fas fa-user-edit"></i>
                     </a>
-                </form>
 
+
+                </div>
             </td>
         </tr>
         @endforeach

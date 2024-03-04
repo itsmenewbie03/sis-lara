@@ -47,20 +47,20 @@ Student Dashboard
             <td>{{$student->address}}</td>
             <td>{{$student->age}}</td>
             <td>
-                <form method="POST" action={{route("student.destroy",$student->id)}}>
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
+                <div class="d-flex">
+                    <form method="POST" action="{{route("student.destroy",$student->id)}}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
 
-                    <div class="form-group">
                         <button type="submit" class="btn btn-danger" data-toggle="tooltip" title="Delete Student">
                             <i class="fas fa-user-times"></i>
                         </button>
-                    </div>
-                </form>
+                    </form>
 
-                <a href="{{route('student.edit',$student->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Edit Student">
-                    <i class="fas fa-user-edit"></i>
-                </a>
+                    <a href="{{route('student.edit',$student->id)}}" class="ml-1 btn btn-primary" data-toggle="tooltip" title="Edit Student">
+                        <i class="fas fa-user-edit"></i>
+                    </a>
+                </div>
             </td>
         </tr>
         @endforeach

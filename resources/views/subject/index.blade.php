@@ -46,20 +46,21 @@ Subject Dashboard
             <td>{{$subject->subjectName}}</td>
             <td>{{$subject->subjectCode}}</td>
             <td>
-                <form method="POST" action={{route("subject.destroy",$subject->id)}}>
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
+                <div class="d-flex">
+                    <form method="POST" action={{route("subject.destroy",$subject->id)}}>
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
 
-                    <div class="form-group">
                         <button type="submit" class="btn btn-danger" data-toggle="tooltip" title="Delete Subject">
                             <i class="fas fa-user-times"></i>
                         </button>
-                    </div>
-                    <a href="{{route('subject.edit',$subject->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Edit Subject">
+                    </form>
+                    <a href="{{route('subject.edit',$subject->id)}}" class="ml-1 btn btn-primary" data-toggle="tooltip" title="Edit Subject">
                         <i class="fas fa-user-edit"></i>
                     </a>
-                </form>
 
+
+                </div>
             </td>
         </tr>
         @endforeach
