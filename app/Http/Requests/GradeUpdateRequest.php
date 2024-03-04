@@ -23,7 +23,12 @@ class GradeUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'grade' => ['required', 'numeric', 'min:1', 'max:5']
+            'grade' => ['required', 'numeric', 'min:1', 'max:5', function ($attribute, $value, $validator) {
+                $valid_grade = [1.0, 1.25, 1.50, 1.75, 2.0, 2.25, 2.50, 2.75, 3.0, 5.0];
+                if (!in_array($value, $valid_grade)) {
+                    $validator($attribute, 'Invalid grade.');
+                }
+            }],
         ];
     }
 }
